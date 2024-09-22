@@ -1,0 +1,5 @@
+Answer 1) By default, Django signals are executed synchronously. The signal's receiver functions are called during the flow of the program and block the caller until they are completed.
+Answer 2) Yes, by default, Django signals run in the same thread as the caller. The signal receiver (the function that is called when a signal is triggered) executes in the same thread as 
+the code that triggered the signal.
+I'll use Python's threading module to print the current thread's ID in both the caller and the signal receiver function. If they have the same thread ID, it proves that signals are 
+running in the same thread as the caller.
